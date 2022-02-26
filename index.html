@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Fridge</title>
+
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link rel="stylesheet" href="//unpkg.com/bootstrap@4.x/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue.min.css"/>
+
+    <!-- Overrides and custom styles -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+    <div class="mb-2">
+        <b-navbar toggleable="lg" type="dark" variant="info">
+            <b-navbar-brand href="#">The Fridge</b-navbar-brand>
+
+            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+            <b-collapse id="nav-collapse" is-nav>
+                <b-navbar-nav>
+                    <b-nav-item href="#">Home</b-nav-item>
+<!--                    <b-nav-item href="#">Favorites</b-nav-item>-->
+<!--                    <b-nav-item href="#">Buy</b-nav-item>-->
+                </b-navbar-nav>
+
+<!--                &lt;!&ndash; Right aligned nav items &ndash;&gt;-->
+<!--                <b-navbar-nav class="ml-auto">-->
+<!--                    <b-nav-form>-->
+<!--                        <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>-->
+<!--                        <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>-->
+<!--                    </b-nav-form>-->
+
+<!--                    <b-nav-item-dropdown text="Sort" right>-->
+<!--                        <b-dropdown-item href="#">Qty </b-dropdown-item>-->
+<!--                        <b-dropdown-item href="#">ES</b-dropdown-item>-->
+<!--                        <b-dropdown-item href="#">RU</b-dropdown-item>-->
+<!--                        <b-dropdown-item href="#">FA</b-dropdown-item>-->
+<!--                    </b-nav-item-dropdown>-->
+<!--                </b-navbar-nav>-->
+            </b-collapse>
+        </b-navbar>
+    </div>
+
+    <div>
+        <edit-item :modalitem="modalItem" @update-item="updateItem"></edit-item>
+    </div>
+
+    <div>
+        <add-item @new-item="addItem"></add-item>
+    </div>
+
+    <div>
+        <fridge :items="items" @delete-item="deleteItem" @open-edit-modal="openEditModal"></fridge>
+    </div>
+</div>
+
+
+<!-- Load Vue followed by BootstrapVue -->
+<script src="//unpkg.com/vue@2.x/dist/vue.js"></script>
+<script src="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue.js"></script>
+
+<!-- Load the following for BootstrapVueIcons support -->
+<script src="//unpkg.com/bootstrap-vue@2.x/dist/bootstrap-vue-icons.min.js"></script>
+
+<!-- Load the app -->
+<script src="js/components/fridge.js"></script>
+<script src="js/components/addItem.js"></script>
+<script src="js/components/app-models.js"></script>
+<script src="js/components/editItem.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
