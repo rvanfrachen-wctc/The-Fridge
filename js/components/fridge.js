@@ -89,6 +89,19 @@ Vue.component('Fridge', {
                 <span class="sr-only">Delete</span>
               </template>
             </template>
+
+            <template #cell(qty)="row">
+              <template v-if="row.item.isOut">
+                  <span aria-hidden="true">
+                    <b-icon icon="dash-circle" variant="none"></b-icon>
+                  </span>
+                <span class="sr-only">Out</span>
+              </template>
+
+              <template v-else>
+                {{ row.item.qty }}
+              </template>
+            </template>
         </b-table>
     `
 })
