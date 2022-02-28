@@ -3,6 +3,7 @@ Vue.component('AddItem', {
         return {
             newName: '',
             newQty: null,
+            newIsOut: false,
         }
     },
 
