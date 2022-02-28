@@ -42,9 +42,9 @@ Vue.component('EditItem', {
             this.modalitem.isOut = this.modalitem.qty <= 0 || this.modalitem.qty === null;
             this.$emit('update-item', this.modalitem);
             // Hide the modal manually
-            this.$nextTick(() => {
-                this.$bvModal.hide('editModal')
-            })
+            // this.$nextTick(() => {
+            //     this.$bvModal.hide('editModal')
+            // })
         },
     },
 
